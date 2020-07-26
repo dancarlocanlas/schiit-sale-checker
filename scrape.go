@@ -67,12 +67,12 @@ func main() {
 		productName := strings.TrimSpace(s.Find("div.title").Text())
 		price := strings.TrimSpace(s.Find("div.price").Text())
 
-		if productName == "Modi 3" {
+		switch productName {
+		case "Modi 3":
+		case "Loki":
+		case "Magni 3":
 			callWebhook(productName, price)
-		} else if productName == "Loki" {
-			callWebhook(productName, price)
-		} else if productName == "Magni 3" {
-			callWebhook(productName, price)
+		default:
 		}
 	})
 }
